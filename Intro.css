@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #28282B;
+  margin: 0;
+  /* Removes default margins */
+  height: 90vh;
+  /* Adjust the height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* To make text visible over the background */
+  position: relative;
+  /* Needed for positioning the pseudo-element */
+  overflow: hidden;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('Images/Background_intro.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(2px);
+  /* Adjust the blur intensity */
+  z-index: -1;
+  /* Places it behind the content */
+}
