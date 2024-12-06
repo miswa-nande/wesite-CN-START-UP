@@ -46,7 +46,6 @@ nav {
     display: flex;
     list-style: none;
     transition: transform 0.5s ease, opacity 0.5s ease, visibility 0s linear 0.5s;
-    /* Transition for transform, opacity, and visibility */
     transform: translateY(-20px);
     /* Initially hidden */
     opacity: 0;
@@ -111,6 +110,8 @@ nav {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
+    /* Hide normal nav links on small screens */
     .nav-links {
         display: flex;
         flex-direction: column;
@@ -125,6 +126,12 @@ nav {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
         padding: 1rem;
+        transform: translateY(-20px);
+        /* Initially hidden */
+        opacity: 0;
+        /* Initially invisible */
+        visibility: hidden;
+        /* Hidden by default */
     }
 
     .nav-links.active {
@@ -142,7 +149,19 @@ nav {
         /* Space between dropdown items */
     }
 
+    /* Make burger menu visible on small screens */
     .burger {
         display: flex;
+    }
+}
+
+/* On larger screens, show the navigation links inline */
+@media (min-width: 769px) {
+    .nav-links {
+        display: flex;
+        /* Show navigation links inline */
+        transform: none;
+        opacity: 1;
+        visibility: visible;
     }
 }
