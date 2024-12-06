@@ -12,6 +12,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="Intro.css" />
+
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  </head>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="home.css" />
   <link rel="shortcut icon" href="images/LOGOTOP.png">
@@ -43,6 +48,71 @@
 
 
   </div>
+
+  <footer>
+    <div class="heart-container">
+      <p class="love-text">Support local businesses by clicking this heart</p>
+      <a href="homepage.html" id="heart-link" onclick="handleHeartClick()">
+        <span id="heart" class="heart">❤️</span>
+      </a>
+      <span id="click-count" class="click-count">0</span>
+    </div>
+  </footer>
+
+
+
+
+
+
+  <script>
+    let clickCount = 0;
+
+    // Load the saved click count from localStorage when the page loads
+    window.onload = function () {
+      // Retrieve the stored count from localStorage
+      const savedCount = localStorage.getItem('clickCount');
+      if (savedCount) {
+        clickCount = parseInt(savedCount, 10);
+        document.getElementById('click-count').textContent = clickCount;
+      }
+
+      // If the heart has been clicked before, add the "glow" class
+      if (localStorage.getItem('heartClicked') === 'true') {
+        document.getElementById('heart').classList.add('glow');
+      }
+    };
+
+    // Handle the click event
+    function handleHeartClick() {
+      const heart = document.getElementById('heart');
+      const clickCountDisplay = document.getElementById('click-count');
+
+      // Increment the click count
+      clickCount++;
+
+      // Save the updated count to localStorage
+      localStorage.setItem('clickCount', clickCount);
+
+      // Update the click count display
+      clickCountDisplay.textContent = clickCount;
+
+      // Mark the heart as clicked and store this status
+      localStorage.setItem('heartClicked', 'true');
+
+      // Add the "glow" effect to the heart
+      heart.classList.add('glow');
+
+      // Remove glow effect after a short delay
+      setTimeout(() => {
+        heart.classList.remove('glow');
+      }, 300);
+    }
+
+
+  </script>
+
 </body>
+
+
 
 </html>
