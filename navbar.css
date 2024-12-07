@@ -5,37 +5,57 @@
     box-sizing: border-box;
 }
 
-
 /* Navigation Bar */
 nav {
     display: flex;
     justify-content: space-between;
-    /* Space between logo and navigation links */
+    /* Space between logo and the nav-container */
     align-items: center;
-    padding: 0.75rem 2rem;
-    /* Make navbar slightly smaller */
+    padding: 0.5rem 1.5rem;
+    /* Compact padding */
     background-color: #f5f5f5;
     background-image: url('https://www.transparenttextures.com/patterns/white-diamond.png');
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 
 /* Logo */
-.logo img {
-    height: 50px;
+/* Logo styling */
+.logo {
+    display: flex;
+    align-items: center;
 }
 
-/* Navigation container, to ensure burger menu and nav-links are within the same flex container */
+.logo img {
+    height: 40px;
+    /* Adjust logo size */
+    border-radius: 50%;
+    /* Make logo round */
+    margin-right: 0.5rem;
+    /* Add space between the image and text */
+}
+
+.logo-text {
+    font-family: 'Carattere', cursive;
+    /* Match your fonts */
+    font-size: 1.5rem;
+    /* Adjust text size */
+    color: #333;
+    /* Adjust text color */
+    font-weight: bold;
+}
+
+/* Navigation container for links and burger menu */
 .nav-container {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    /* Align the nav-links to the right */
+    /* Align links and burger to the right */
     flex-grow: 1;
-    /* Allow container to grow */
+    /* Allow space for the logo */
 }
 
 /* Navigation Links */
@@ -43,30 +63,28 @@ nav {
     display: flex;
     list-style: none;
     justify-content: flex-end;
-    /* Align links to the right */
     align-items: center;
     transition: all 0.5s ease;
 }
 
-/* Each navigation link item */
 .nav-links li {
-    margin: 0 1.5rem;
+    margin: 0 1rem;
+    /* Compact spacing */
 }
 
-/* Navigation link styles */
 .nav-links a {
     text-decoration: none;
     color: #333;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     /* Slightly smaller font */
     font-weight: bold;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
+    /* Compact padding */
     position: relative;
-    /* Needed for the pseudo-element underline */
     transition: color 0.3s ease;
 }
 
-/* Hover underline effect with animation */
+/* Hover underline effect */
 .nav-links a::after {
     content: "";
     position: absolute;
@@ -76,15 +94,12 @@ nav {
     height: 2px;
     background-color: #1a2b48;
     transition: width 0.3s ease;
-    /* Animate the width of the underline */
 }
 
 .nav-links a:hover::after {
     width: 100%;
-    /* Expand the underline to full width */
 }
 
-/* Highlight active button */
 .nav-links a.active {
     color: #1a2b48;
     font-weight: bold;
@@ -93,45 +108,43 @@ nav {
 /* Burger Menu for Small Screens */
 .burger {
     display: none;
+    /* Hidden by default on larger screens */
     flex-direction: column;
     cursor: pointer;
     position: relative;
 }
 
 .burger div {
-    width: 25px;
-    height: 3px;
+    width: 20px;
+    height: 2.5px;
     background-color: #333;
     margin: 3px;
     transition: all 0.3s;
 }
 
-/* Dropdown Container Styling */
+/* Dropdown Styling */
 .nav-links .dropdown {
     position: relative;
     display: inline-block;
 }
 
-/* Dropdown Button */
 .nav-links .dropdown button {
     background-color: #f5f5f5;
     color: #333;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     font-weight: bold;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     transition: color 0.3s ease;
 }
 
-/* Dropdown Menu */
 .nav-links .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f5f5f5;
     width: 150px;
-    /* Set a fixed width */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     z-index: 1;
     top: 100%;
@@ -139,10 +152,8 @@ nav {
     padding: 1rem;
     transition: all 0.3s ease;
     margin-top: 0;
-    /* Remove gap between the button and dropdown */
 }
 
-/* Show dropdown menu on hover */
 .nav-links .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -153,12 +164,13 @@ nav {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 70px;
+        top: 60px;
+        /* Adjust for smaller nav height */
         right: 0;
         background-color: #f5f5f5;
         width: 100%;
         max-width: 300px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
         padding: 1rem;
         transform: translateY(-20px);
@@ -179,13 +191,12 @@ nav {
         margin: 1rem 0;
     }
 
-    /* Make burger menu visible on small screens */
     .burger {
         display: flex;
+        /* Show burger menu on small screens */
     }
 }
 
-/* On larger screens, show the navigation links inline */
 @media (min-width: 768px) {
     .nav-links {
         display: flex;
