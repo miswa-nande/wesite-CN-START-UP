@@ -12,11 +12,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="home.css" />
     <link rel="stylesheet" href="navbar.css" />
     <link rel="stylesheet" href="advertise_design.css" />
     <link rel="shortcut icon" href="images/LOGOTOP.png">
     <title>CN StartUps Home Page</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+    <style>
+        #map {
+            height: 400px;
+            /* Set the height of the map */
+            width: 100%;
+            /* Set the width of the map */
+        }
+    </style>
 </head>
 
 <body>
@@ -85,6 +95,8 @@
                     <label for="location">Business Location:</label>
                     <input type="text" id="location" name="location" required>
                 </div>
+                <!-- Map div -->
+                <div id="map"></div>
                 <!-- Image Upload Section -->
                 <div class="form-group">
                     <label for="business-image">Upload Business Image or Menu:</label>
@@ -108,20 +120,96 @@
             </div>
         </section>
 
+
         <!-- Call to Action -->
+        <!-- Call to Action Section -->
         <section class="cta">
-            <h2>Ready to Join?</h2>
-            <p>Don’t miss out on the chance to grow your business and connect with your local community.</p>
-            <a href="#form-section" class="cta-btn">Join Now</a>
+            <h2>Ready to Join Us?</h2>
+            <p>Become part of a growing community and take your business to the next level!</p>
+            <a href="#join" class="cta-btn">Join Now</a>
         </section>
+
     </main>
 
     <footer>
-        <p>&copy; 2024 CN StartUps. All Rights Reserved.</p>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" target="_blank">
+                    <i class="fab fa-facebook-square social-icon"></i> <!-- Facebook icon -->
+                </a>
+                <a href="#" target="_blank">
+                    <i class="fab fa-instagram social-icon"></i> <!-- Instagram icon -->
+                </a>
+                <a href="#" target="_blank">
+                    <i class="fab fa-twitter-square social-icon"></i> <!-- Twitter icon -->
+                </a>
+            </div>
+            <p>&copy; 2024 CN StartUps | <a href="contact.html">Contact Us</a></p>
+        </div>
     </footer>
 </body>
 
 <script src="homepageScript.js"></script>
+<script>
+    let map;
+    let marker;
+    let geocoder;
+    let autocomplete;
+
+    function initMap() {
+        // Initialize geocoder and map
+        geocoder = new google.maps.Geocoder();
+
+        // Create a map centered at a default location (can be changed)
+        const defaultLocation = { lat: -34.397, lng: 150.644 };
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: defaultLocation,
+            zoom: 15,
+        });
+
+        // Create a marker on the map
+        marker = new google.maps.Marker({
+            position: defaultLocation,
+            map: map,
+            draggable: true, // Allow the marker to be dragged
+        });
+
+        // Enable the location search via autocomplete
+        autocomplete = new google.maps.places.Autocomplete(document.getElementById("location"));
+        autocomplete.setFields(["address_component", "geometry"]);
+
+        // Update marker position when a place is selected
+        autocomplete.addListener("place_changed", function () {
+            const place = autocomplete.getPlace();
+            if (!place.geometry) {
+                return;
+            }
+
+            // Set the new center of the map based on the selected location
+            map.setCenter(place.geometry.location);
+            map.setZoom(15);
+
+            // Place the marker at the new location
+            marker.setPosition(place.geometry.location);
+
+            // Fill the input with the address of the selected place
+            document.getElementById("location").value = place.formatted_address;
+        });
+
+        // Add event listener to update the form input when the marker is dragged
+        google.maps.event.addListener(marker, "dragend", function () {
+            const position = marker.getPosition();
+            geocoder.geocode({ location: position }, function (results, status) {
+                if (status === "OK" && results[0]) {
+                    document.getElementById("location").value = results[0].formatted_address;
+                }
+            });
+        });
+    }
+
+    // Load the map after the page has loaded
+    window.onload = initMap;
+</script>
 </body>
 
 </html>
