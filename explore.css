@@ -1,0 +1,136 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+
+/* Swipeable Navigation Bar */
+.swipe-navbar {
+    display: flex;
+    justify-content: center; /* Centers the nav-items */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    max-width: 90%; /* Restricts the width */
+    margin: 20px auto; /* Adds space between navbars and centers */
+    border-radius: 12px; /* Adds rounded edges */
+    scrollbar-width: none; /* For Firefox */
+}
+
+.swipe-navbar::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar in WebKit browsers */
+}
+
+
+.nav-item {
+    padding: 10px 20px;
+    margin: 0 8px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.nav-item:hover {
+    background-color: #eee;
+    transform: scale(1.05);
+}
+
+/* Optional: Add responsiveness */
+@media (max-width: 768px) {
+    .swipe-navbar {
+        max-width: 100%; /* Allow full width on smaller screens */
+        padding: 8px;
+    }
+    .nav-item {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}
+
+
+.nav-item:active {
+    background-color: #ddd;
+    transform: scale(0.95);
+}
+/* Card Container */
+.card-container {
+    display: flex;
+    justify-content: space-between; /* Space between cards */
+    gap: 20px; /* Add spacing between cards */
+    flex-wrap: wrap; /* Allows wrapping if screen is too narrow */
+    padding: 20px; /* Optional padding for container */
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Card Styles */
+.card {
+    flex: 1; /* Allows cards to be flexible */
+    max-width: 23%; /* Ensures 4 cards fit in one row */
+    min-width: 200px; /* Prevents cards from shrinking too much */
+    background-color: #fff; /* White background for the card */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Ensures content stacks vertically */
+    position: relative; /* Enables positioning of child elements */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image Section */
+.card-image {
+    width: 100%; /* Ensures the image spans the card width */
+    aspect-ratio: 16/9; /* Maintains a fixed aspect ratio for the image */
+    object-fit: cover; /* Ensures the image scales without distortion */
+}
+
+/* Content Section */
+.card-content {
+    flex: 1; /* Allows the content section to stretch */
+    padding: 16px;
+    background-color: #fff;
+    position: relative; /* Creates a context for absolute positioning */
+}
+
+.card-title {
+    font-size: 18px;
+    margin: 0 0 8px;
+    color: #333;
+    text-align: center;
+}
+
+.card-description {
+    font-size: 14px;
+    color: #555;
+    margin: 0 0 12px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Ratings Section - Positioning Stars at Bottom Left */
+.card-rating {
+    font-size: 18px;
+    color: #FFD700; /* Gold color for stars */
+    position: absolute; /* Allows precise positioning */
+    bottom: 10px; /* Distance from the bottom of the card */
+    left: 16px; /* Distance from the left edge of the card */
+}
+
+/* Hover Effects */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
