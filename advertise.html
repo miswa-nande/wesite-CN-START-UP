@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description" content="Camarines Norte StartUps - Explore New Local Variety" />
+    <meta name="keywords" content="StartUps, Cnstartups, Tambayan, Daet, Aesthetics, Food" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="revised" content="Dec 6, 2024" />
+    <meta name="title" content="Camarines Norte StartUps - Explore New Local Businesses" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="advertise_design.css" />
+    <link rel="shortcut icon" href="images/LOGOTOP.png">
+    <title>CN StartUps Home Page</title>
+</head>
+
+<body>
+    <nav>
+        <a href="homepage.html">
+            <div class="logo">
+                <img src="Images/CN.png" alt="Logo" />
+                <span class="logo-text">CN StartUps</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="stories.html">Stories</a></li>
+            <li><a href="advertise.html">Join Us</a></li>
+        </ul>
+        <div class="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Join CN StartUps!!</h1>
+        <p>Showcase your business to a supportive and growing community in Camarines Norte. Let us help you succeed!</p>
+    </header>
+
+    <main>
+        <!-- Form Section -->
+        <section class="form-section">
+            <h2>Become a Member</h2>
+            <p>Fill out the form below to join the CN StartUps platform.</p>
+            <form action="submit_form.php" method="POST" class="join-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="business-name">Business Name:</label>
+                    <input type="text" id="business-name" name="business-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="owner-name">Owner's Name:</label>
+                    <input type="text" id="owner-name" name="owner-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Business Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="food">Food</option>
+                        <option value="services">Services</option>
+                        <option value="retail">Retail</option>
+                        <option value="tourism">Tourism</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Brief Description of Your Business:</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="location">Business Location:</label>
+                    <input type="text" id="location" name="location" required>
+                </div>
+                <!-- Image Upload Section -->
+                <div class="form-group">
+                    <label for="business-image">Upload Business Image or Menu:</label>
+                    <input type="file" id="business-image" name="business-image" accept="image/*" required>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <h2>What Our Members Say</h2>
+            <div class="testimonial-card">
+                <p>"Joining CN StartUps gave our business the exposure we needed. We saw a 40% increase in customers!"
+                </p>
+                <h4>- Rustic Cafe</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"Being part of this platform connected us with investors who helped scale our operations."</p>
+                <h4>- Pastil Sa Daet</h4>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <h2>Ready to Join?</h2>
+            <p>Don’t miss out on the chance to grow your business and connect with your local community.</p>
+            <a href="#form-section" class="cta-btn">Join Now</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CN StartUps. All Rights Reserved.</p>
+    </footer>
+</body>
+
+<script src="homepageScript.js"></script>
+</body>
+
+</html>
