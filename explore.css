@@ -1,32 +1,38 @@
 /* General Reset */
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
 }
 
-
-
 /* Swipeable Navigation Bar */
 .swipe-navbar {
     display: flex;
-    justify-content: center; /* Centers the nav-items */
-    overflow-x: auto; /* Enables horizontal scrolling */
+    justify-content: center;
+    /* Centers the nav-items */
+    overflow-x: auto;
+    /* Enables horizontal scrolling */
     white-space: nowrap;
     background-color: #f5f5f5;
     padding: 10px;
     border-bottom: 1px solid #ddd;
-    max-width: 90%; /* Restricts the width */
-    margin: 20px auto; /* Adds space between navbars and centers */
-    border-radius: 12px; /* Adds rounded edges */
-    scrollbar-width: none; /* For Firefox */
+    max-width: 90%;
+    /* Restricts the width */
+    margin: 20px auto;
+    /* Adds space between navbars and centers */
+    border-radius: 12px;
+    /* Adds rounded edges */
+    scrollbar-width: none;
+    /* For Firefox */
 }
 
 .swipe-navbar::-webkit-scrollbar {
-    display: none; /* Hides the scrollbar in WebKit browsers */
+    display: none;
+    /* Hides the scrollbar in WebKit browsers */
 }
 
-
+/* Navigation Item Styles */
 .nav-item {
     padding: 10px 20px;
     margin: 0 8px;
@@ -41,6 +47,7 @@ body, html {
     transition: transform 0.3s, background-color 0.3s;
 }
 
+/* Hover Effects on Navigation Items */
 .nav-item:hover {
     background-color: #eee;
     transform: scale(1.05);
@@ -49,60 +56,78 @@ body, html {
 /* Optional: Add responsiveness */
 @media (max-width: 768px) {
     .swipe-navbar {
-        max-width: 100%; /* Allow full width on smaller screens */
+        max-width: 100%;
+        /* Allow full width on smaller screens */
         padding: 8px;
     }
+
     .nav-item {
         padding: 8px 15px;
         font-size: 12px;
     }
 }
 
-
+/* Active state for Navigation Items */
 .nav-item:active {
     background-color: #ddd;
     transform: scale(0.95);
 }
+
 /* Card Container */
 .card-container {
     display: flex;
-    justify-content: space-between; /* Space between cards */
-    gap: 20px; /* Add spacing between cards */
-    flex-wrap: wrap; /* Allows wrapping if screen is too narrow */
-    padding: 20px; /* Optional padding for container */
+    justify-content: space-between;
+    /* Space between cards */
+    gap: 20px;
+    /* Add spacing between cards */
+    flex-wrap: wrap;
+    /* Allows wrapping if screen is too narrow */
+    padding: 20px;
+    /* Optional padding for container */
     max-width: 100%;
     box-sizing: border-box;
 }
 
 /* Card Styles */
 .card {
-    flex: 1; /* Allows cards to be flexible */
-    max-width: 23%; /* Ensures 4 cards fit in one row */
-    min-width: 200px; /* Prevents cards from shrinking too much */
-    background-color: #fff; /* White background for the card */
+    flex: 1;
+    /* Allows cards to be flexible */
+    max-width: 23%;
+    /* Ensures 4 cards fit in one row */
+    min-width: 200px;
+    /* Prevents cards from shrinking too much */
+    background-color: #fff;
+    /* White background for the card */
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column; /* Ensures content stacks vertically */
-    position: relative; /* Enables positioning of child elements */
+    flex-direction: column;
+    /* Ensures content stacks vertically */
+    position: relative;
+    /* Enables positioning of child elements */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Image Section */
 .card-image {
-    width: 100%; /* Ensures the image spans the card width */
-    aspect-ratio: 16/9; /* Maintains a fixed aspect ratio for the image */
-    object-fit: cover; /* Ensures the image scales without distortion */
+    width: 100%;
+    /* Ensures the image spans the card width */
+    aspect-ratio: 16/9;
+    /* Maintains a fixed aspect ratio for the image */
+    object-fit: cover;
+    /* Ensures the image scales without distortion */
 }
 
 /* Content Section */
 .card-content {
-    flex: 1; /* Allows the content section to stretch */
+    flex: 1;
+    /* Allows the content section to stretch */
     padding: 16px;
     background-color: #fff;
-    position: relative; /* Creates a context for absolute positioning */
+    position: relative;
+    /* Creates a context for absolute positioning */
 }
 
 .card-title {
@@ -123,14 +148,173 @@ body, html {
 /* Ratings Section - Positioning Stars at Bottom Left */
 .card-rating {
     font-size: 18px;
-    color: #FFD700; /* Gold color for stars */
-    position: absolute; /* Allows precise positioning */
-    bottom: 10px; /* Distance from the bottom of the card */
-    left: 16px; /* Distance from the left edge of the card */
+    color: #FFD700;
+    /* Gold color for stars */
+    position: absolute;
+    /* Allows precise positioning */
+    bottom: 10px;
+    /* Distance from the bottom of the card */
+    left: 16px;
+    /* Distance from the left edge of the card */
 }
 
 /* Hover Effects */
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* General Reset for Navigation */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #1a2b48;
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    color: white;
+    overflow-y: auto;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    background-color: #f5f5f5;
+    background-image: url('https://www.transparenttextures.com/patterns/white-diamond.png');
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Logo */
+.logo img {
+    height: 50px;
+}
+
+/* Navigation Container */
+.nav-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    /* Align to the right */
+    align-items: center;
+    transition: all 0.5s ease;
+    flex-grow: 1;
+}
+
+/* Navigation Link Styles */
+.nav-links li {
+    margin: 0 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Hover underline effect with animation */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #1a2b48;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Highlight active button */
+.nav-links a.active {
+    color: #1a2b48;
+    font-weight: bold;
+}
+
+/* Burger Menu for Small Screens */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px;
+    transition: all 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #f5f5f5;
+        width: 100%;
+        max-width: 300px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 1rem;
+        transform: translateY(-20px);
+        opacity: 0;
+        visibility: hidden;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    /* Show burger menu on small screens */
+    .burger {
+        display: flex;
+    }
+}
+
+/* On larger screens, show the navigation links inline */
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+    }
 }
