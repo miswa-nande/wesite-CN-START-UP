@@ -78,40 +78,119 @@ select {
 /* Testimonials Section */
 .testimonials {
     background: #f9f9f9;
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
     text-align: center;
+    font-family: 'Arial', sans-serif;
+    margin-top: 2rem;
 }
 
+/* Testimonials Header */
+.testimonials h2 {
+    font-size: 2rem;
+    color: #004d61;
+    /* Matching the color scheme */
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Testimonial Card */
 .testimonial-card {
-    margin: 1rem auto;
+    margin: 1.5rem auto;
     max-width: 600px;
     background: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* Card Hover Effect */
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    /* Lift effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Testimonial Text */
+.testimonial-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* Customer Name */
+.testimonial-card h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #004d61;
+    /* Consistent with the section header */
+    margin-top: 1rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .testimonial-card {
+        max-width: 90%;
+        padding: 1.5rem;
+    }
+
+    .testimonials h2 {
+        font-size: 1.8rem;
+    }
+
+    .testimonial-card h4 {
+        font-size: 1rem;
+    }
+}
+
 
 /* Call to Action */
 .cta {
     background: #004d61;
     color: white;
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
+    /* Increased padding for more space */
+    margin: 3rem 0;
+    /* Adds spacing around the section */
 }
 
+/* Call to Action Button Styling */
 .cta-btn {
     text-decoration: none;
     color: white;
     background: #ffc107;
-    padding: 0.7rem 1.5rem;
+    padding: 0.8rem 2rem;
+    /* Slightly larger padding */
     border-radius: 4px;
     font-size: 1.2rem;
     transition: background 0.3s;
+    display: inline-block;
+    margin-top: 1.5rem;
+    /* Space between the text and the button */
 }
 
+/* Hover Effect for the Button */
 .cta-btn:hover {
     background: #e0a800;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .cta {
+        padding: 2rem 1rem;
+        /* Slightly smaller padding on mobile */
+    }
+
+    .cta-btn {
+        padding: 0.7rem 1.5rem;
+        /* Adjust button size for smaller screens */
+        font-size: 1rem;
+        /* Adjust font size */
+    }
 }
 
 /* Footer */
