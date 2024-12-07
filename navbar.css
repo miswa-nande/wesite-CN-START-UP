@@ -5,15 +5,6 @@
     box-sizing: border-box;
 }
 
-/* Body Styling */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    background-color: #1a2b48;
-    background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
-    color: white;
-    overflow-y: auto;
-}
 
 /* Navigation Bar */
 nav {
