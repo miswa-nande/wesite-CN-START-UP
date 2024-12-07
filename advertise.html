@@ -18,13 +18,17 @@
     <link rel="stylesheet" href="advertise_design.css" />
     <link rel="shortcut icon" href="images/LOGOTOP.png">
     <title>CN StartUps Home Page</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
     <style>
         #map {
             height: 400px;
-            /* Set the height of the map */
             width: 100%;
-            /* Set the width of the map */
         }
     </style>
 </head>
@@ -120,8 +124,6 @@
             </div>
         </section>
 
-
-        <!-- Call to Action -->
         <!-- Call to Action Section -->
         <section class="cta">
             <h2>Ready to Join Us?</h2>
@@ -135,13 +137,13 @@
         <div class="footer-content">
             <div class="social-links">
                 <a href="#" target="_blank">
-                    <i class="fab fa-facebook-square social-icon"></i> <!-- Facebook icon -->
+                    <i class="fab fa-facebook-square social-icon"></i>
                 </a>
                 <a href="#" target="_blank">
-                    <i class="fab fa-instagram social-icon"></i> <!-- Instagram icon -->
+                    <i class="fab fa-instagram social-icon"></i>
                 </a>
                 <a href="#" target="_blank">
-                    <i class="fab fa-twitter-square social-icon"></i> <!-- Twitter icon -->
+                    <i class="fab fa-twitter-square social-icon"></i>
                 </a>
             </div>
             <p>&copy; 2024 CN StartUps | <a href="contact.html">Contact Us</a></p>
@@ -153,63 +155,35 @@
 <script>
     let map;
     let marker;
-    let geocoder;
-    let autocomplete;
 
     function initMap() {
-        // Initialize geocoder and map
-        geocoder = new google.maps.Geocoder();
+        // Initialize the map and set the view to a default location
+        map = L.map('map').setView([13.5751, 122.6235], 15); // Default to Camarines Norte, adjust as needed
 
-        // Create a map centered at a default location (can be changed)
-        const defaultLocation = { lat: -34.397, lng: 150.644 };
-        map = new google.maps.Map(document.getElementById("map"), {
-            center: defaultLocation,
-            zoom: 15,
-        });
+        // Add OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-        // Create a marker on the map
-        marker = new google.maps.Marker({
-            position: defaultLocation,
-            map: map,
-            draggable: true, // Allow the marker to be dragged
-        });
+        // Add a draggable marker
+        marker = L.marker([13.5751, 122.6235], { draggable: true }).addTo(map);
 
-        // Enable the location search via autocomplete
-        autocomplete = new google.maps.places.Autocomplete(document.getElementById("location"));
-        autocomplete.setFields(["address_component", "geometry"]);
-
-        // Update marker position when a place is selected
-        autocomplete.addListener("place_changed", function () {
-            const place = autocomplete.getPlace();
-            if (!place.geometry) {
-                return;
-            }
-
-            // Set the new center of the map based on the selected location
-            map.setCenter(place.geometry.location);
-            map.setZoom(15);
-
-            // Place the marker at the new location
-            marker.setPosition(place.geometry.location);
-
-            // Fill the input with the address of the selected place
-            document.getElementById("location").value = place.formatted_address;
-        });
-
-        // Add event listener to update the form input when the marker is dragged
-        google.maps.event.addListener(marker, "dragend", function () {
-            const position = marker.getPosition();
-            geocoder.geocode({ location: position }, function (results, status) {
-                if (status === "OK" && results[0]) {
-                    document.getElementById("location").value = results[0].formatted_address;
-                }
-            });
+        // Update input field when marker is dragged
+        marker.on('dragend', function (e) {
+            const latlng = e.target.getLatLng();
+            updateLocationField(latlng);
         });
     }
 
-    // Load the map after the page has loaded
+    // Update location input field with marker position
+    function updateLocationField(latlng) {
+        const lat = latlng.lat.toFixed(6);
+        const lng = latlng.lng.toFixed(6);
+        const locationInput = document.getElementById('location');
+        locationInput.value = `Latitude: ${lat}, Longitude: ${lng}`;
+    }
+
+    // Load the map once the page is ready
     window.onload = initMap;
 </script>
-</body>
-
 </html>
