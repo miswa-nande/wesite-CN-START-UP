@@ -18,6 +18,15 @@
     <link rel="stylesheet" href="advertise_design.css" />
     <link rel="shortcut icon" href="images/LOGOTOP.png">
     <title>CN StartUps Home Page</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+    <style>
+        #map {
+            height: 400px;
+            /* Set the height of the map */
+            width: 100%;
+            /* Set the width of the map */
+        }
+    </style>
 </head>
 
 <body>
@@ -86,6 +95,8 @@
                     <label for="location">Business Location:</label>
                     <input type="text" id="location" name="location" required>
                 </div>
+                <!-- Map div -->
+                <div id="map"></div>
                 <!-- Image Upload Section -->
                 <div class="form-group">
                     <label for="business-image">Upload Business Image or Menu:</label>
@@ -139,6 +150,66 @@
 </body>
 
 <script src="homepageScript.js"></script>
+<script>
+    let map;
+    let marker;
+    let geocoder;
+    let autocomplete;
+
+    function initMap() {
+        // Initialize geocoder and map
+        geocoder = new google.maps.Geocoder();
+
+        // Create a map centered at a default location (can be changed)
+        const defaultLocation = { lat: -34.397, lng: 150.644 };
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: defaultLocation,
+            zoom: 15,
+        });
+
+        // Create a marker on the map
+        marker = new google.maps.Marker({
+            position: defaultLocation,
+            map: map,
+            draggable: true, // Allow the marker to be dragged
+        });
+
+        // Enable the location search via autocomplete
+        autocomplete = new google.maps.places.Autocomplete(document.getElementById("location"));
+        autocomplete.setFields(["address_component", "geometry"]);
+
+        // Update marker position when a place is selected
+        autocomplete.addListener("place_changed", function () {
+            const place = autocomplete.getPlace();
+            if (!place.geometry) {
+                return;
+            }
+
+            // Set the new center of the map based on the selected location
+            map.setCenter(place.geometry.location);
+            map.setZoom(15);
+
+            // Place the marker at the new location
+            marker.setPosition(place.geometry.location);
+
+            // Fill the input with the address of the selected place
+            document.getElementById("location").value = place.formatted_address;
+        });
+
+        // Add event listener to update the form input when the marker is dragged
+        google.maps.event.addListener(marker, "dragend", function () {
+            const position = marker.getPosition();
+            geocoder.geocode({ location: position }, function (results, status) {
+                if (status === "OK" && results[0]) {
+                    document.getElementById("location").value = results[0].formatted_address;
+                }
+            });
+        });
+    }
+
+    // Load the map after the page has loaded
+    window.onload = initMap;
+</script>
 </body>
 
 </html>
