@@ -12,8 +12,8 @@ body {
   min-height: 100vh;
   /* Ensure content fits screen height */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  /* Stack content vertically */
   color: rgb(0, 0, 0);
   position: relative;
   overflow: hidden;
@@ -42,6 +42,27 @@ body::before {
   max-width: 90%;
   /* Reduce width on smaller screens */
   padding: 1rem;
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+  scrollbar-width: thin;
+  /* For Firefox */
+  scrollbar-color: #2c3e50 #1a1a1a;
+  /* For Firefox */
+}
+
+.About::-webkit-scrollbar {
+  width: 8px;
+}
+
+.About::-webkit-scrollbar-thumb {
+  background: #2c3e50;
+  /* Scrollbar thumb color */
+  border-radius: 5px;
+}
+
+.About::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  /* Scrollbar track color */
 }
 
 .About h2 {
@@ -121,6 +142,13 @@ footer {
 
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
+  body {
+    overflow-y: scroll;
+    /* Enable scrolling for body content */
+    height: auto;
+    /* Allow height to adjust with content */
+  }
+
   .About h2 {
     font-size: 1.2rem;
     /* Smaller title font */
@@ -155,4 +183,9 @@ footer {
     font-size: 1rem;
     /* Smaller heart size */
   }
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
 }
