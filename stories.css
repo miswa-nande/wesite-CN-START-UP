@@ -5,9 +5,7 @@ html {
     padding: 0;
     font-family: 'Arial', sans-serif;
     color: #1a2b48;
-    /* Deep Blue */
     background-color: #eef4f9;
-    /* Light Blue for Background */
     box-sizing: border-box;
 }
 
@@ -16,7 +14,6 @@ header {
     font-size: 2.5rem;
     font-family: 'Carattere', cursive;
     color: #105e8a;
-    /* Vibrant CN StartUps Blue */
     margin: 20px 0;
 }
 
@@ -50,7 +47,6 @@ header {
     height: 200px;
     object-fit: cover;
     border-bottom: 2px solid #105e8a;
-    /* Vibrant Blue Divider */
 }
 
 .story-content {
@@ -61,14 +57,12 @@ header {
     font-size: 1.3rem;
     font-weight: bold;
     color: #105e8a;
-    /* Vibrant CN StartUps Blue */
     margin-bottom: 8px;
 }
 
 .story-description {
     font-size: 0.95rem;
     color: #555;
-    /* Neutral Gray for Text */
     line-height: 1.5;
 }
 
@@ -81,7 +75,6 @@ header {
     width: 100%;
     height: 100%;
     background: rgba(16, 94, 138, 0.8);
-    /* Semi-transparent Blue */
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -101,14 +94,12 @@ header {
 .modal-content h2 {
     font-size: 1.7rem;
     color: #105e8a;
-    /* Vibrant CN StartUps Blue */
     margin-bottom: 10px;
 }
 
 .modal-content p {
     font-size: 1rem;
     color: #444;
-    /* Slightly Darker Neutral Gray */
     line-height: 1.6;
 }
 
@@ -120,14 +111,12 @@ header {
     background: none;
     border: none;
     color: #777;
-    /* Subtle Close Button */
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .modal-close:hover {
     color: #105e8a;
-    /* Highlight Blue on Hover */
 }
 
 /* Responsive Design */

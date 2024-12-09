@@ -109,7 +109,6 @@ select {
 /* Card Hover Effect */
 .testimonial-card:hover {
     transform: translateY(-10px);
-    /* Lift effect */
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
@@ -126,7 +125,6 @@ select {
     font-size: 1.2rem;
     font-weight: bold;
     color: #004d61;
-    /* Consistent with the section header */
     margin-top: 1rem;
 }
 
@@ -153,9 +151,7 @@ select {
     color: white;
     text-align: center;
     padding: 3rem 1rem;
-    /* Increased padding for more space */
     margin: 3rem 0;
-    /* Adds spacing around the section */
 }
 
 /* Call to Action Button Styling */
@@ -164,13 +160,11 @@ select {
     color: white;
     background: #ffc107;
     padding: 0.8rem 2rem;
-    /* Slightly larger padding */
     border-radius: 4px;
     font-size: 1.2rem;
     transition: background 0.3s;
     display: inline-block;
     margin-top: 1.5rem;
-    /* Space between the text and the button */
 }
 
 /* Hover Effect for the Button */
@@ -182,14 +176,11 @@ select {
 @media (max-width: 768px) {
     .cta {
         padding: 2rem 1rem;
-        /* Slightly smaller padding on mobile */
     }
 
     .cta-btn {
         padding: 0.7rem 1.5rem;
-        /* Adjust button size for smaller screens */
         font-size: 1rem;
-        /* Adjust font size */
     }
 }
 

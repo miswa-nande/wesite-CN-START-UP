@@ -9,12 +9,9 @@
 nav {
     display: flex;
     justify-content: space-between;
-    /* Space between logo and the nav-container */
     align-items: center;
     padding: 0.5rem 1.5rem;
-    /* Compact padding */
     background-color: #004d61;
-    /* Changed to a teal-blue */
     background-image: url('https://www.transparenttextures.com/patterns/white-diamond.png');
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -32,21 +29,14 @@ nav {
 
 .logo img {
     height: 40px;
-    /* Adjust logo size */
     border-radius: 50%;
-    /* Make logo round */
     margin-right: 0.5rem;
-    /* Add space between the image and text */
 }
 
 .logo-text {
     font-family: 'Carattere', cursive;
-    /* Match your fonts */
     font-size: 1.5rem;
-    /* Adjust text size */
     color: #ffffff;
-    /* Changed to gold */
-    /* Adjust text color */
     font-weight: bold;
 }
 
@@ -55,9 +45,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    /* Align links and burger to the right */
     flex-grow: 1;
-    /* Allow space for the logo */
 }
 
 /* Navigation Links */
@@ -71,18 +59,14 @@ nav {
 
 .nav-links li {
     margin: 0 1rem;
-    /* Compact spacing */
 }
 
 .nav-links a {
     text-decoration: none;
     color: #fff;
-    /* Changed to white for better contrast */
     font-size: 0.8rem;
-    /* Slightly smaller font */
     font-weight: bold;
     padding: 0.4rem 0.8rem;
-    /* Compact padding */
     position: relative;
     transition: color 0.3s ease;
 }
@@ -96,7 +80,6 @@ nav {
     width: 0;
     height: 2px;
     background-color: #ffc107;
-    /* Gold underline */
     transition: width 0.3s ease;
 }
 
@@ -106,14 +89,12 @@ nav {
 
 .nav-links a.active {
     color: #ffc107;
-    /* Gold active link */
     font-weight: bold;
 }
 
 /* Burger Menu for Small Screens */
 .burger {
     display: none;
-    /* Hidden by default on larger screens */
     flex-direction: column;
     cursor: pointer;
     position: relative;
@@ -123,7 +104,6 @@ nav {
     width: 20px;
     height: 2.5px;
     background-color: #fff;
-    /* White color for burger icon */
     margin: 3px;
     transition: all 0.3s;
 }
@@ -136,9 +116,7 @@ nav {
 
 .nav-links .dropdown button {
     background-color: #004d61;
-    /* Teal-blue */
     color: #fff;
-    /* White text */
     border: none;
     padding: 0.4rem 0.8rem;
     font-weight: bold;
@@ -151,7 +129,6 @@ nav {
     display: none;
     position: absolute;
     background-color: #004d61;
-    /* Teal-blue */
     width: 150px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
@@ -174,10 +151,8 @@ nav {
         flex-direction: column;
         position: absolute;
         top: 60px;
-        /* Adjust for smaller nav height */
         right: 0;
         background-color: #004d61;
-        /* Teal-blue background */
         width: 100%;
         max-width: 300px;
         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
@@ -203,7 +178,6 @@ nav {
 
     .burger {
         display: flex;
-        /* Show burger menu on small screens */
     }
 }
 
@@ -220,12 +194,10 @@ nav {
 
 footer {
     background-color: #004d61;
-    /* Matching nav bar color */
     color: white;
     text-align: center;
     padding: 1.5rem 1rem;
     width: 100%;
-    /* The footer naturally stays at the bottom because of flexbox */
 }
 
 /* Footer content */
@@ -236,14 +208,12 @@ footer {
 
 .footer-content a {
     color: #ffffff;
-    /* Light color for links */
     text-decoration: none;
     font-weight: bold;
 }
 
 .footer-content a:hover {
     color: #ffffff;
-    /* Slightly darker shade when hovered */
 }
 
 /* Social Links Styling */
@@ -254,22 +224,17 @@ footer {
 /* Social Icon Styling */
 .social-icon {
     width: 30px;
-    /* Adjust the size of the icons */
     height: 30px;
     transition: transform 0.3s ease;
 }
 
 .social-icon:hover {
     transform: scale(1.1);
-    /* Slight zoom effect on hover */
 }
 
 /* Make Footer Logo Bigger */
 .footer-logo {
     width: 40px;
-    /* Increased size of logo */
     height: 40px;
-    /* Increased size of logo */
     margin-right: 0.5rem;
-    /* Space between the image and text */
 }
