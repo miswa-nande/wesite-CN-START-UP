@@ -1,7 +1,7 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -40,7 +40,7 @@ body {
     position: relative;
     transition: transform 0.3s;
     width: 150px;
-    height: 300px;
+    height: 400px;
     overflow: hidden;
 }
 
@@ -54,8 +54,6 @@ body {
     color: red;
     cursor: pointer;
 }
-
-
 
 .card-container {
     display: flex;
@@ -77,7 +75,7 @@ body {
     flex-direction: column;
     position: relative;
     transition: transform 0.3s, box-shadow 0.3s;
-    height: 400px;
+    height: 450px; /* Increased card height */
 }
 
 .card:hover {
@@ -88,7 +86,7 @@ body {
 .card-image-container {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 300px; /* Fixed height for the image carousel */
     overflow: hidden;
 }
 
@@ -102,21 +100,31 @@ body {
 .card-content {
     padding: 16px;
     background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 200px; /* Adjusted height for the content */
+    position: absolute; /* Keep it in a fixed position at the bottom */
+    bottom: 0;
+    width: 100%;
 }
 
 .card-title {
-    font-size: 18px;
-    margin-bottom: 8px;
+    font-size: 16px;
+    margin-bottom: 5px;
     color: #333;
     text-align: center;
+    font-weight: bold;
 }
 
 .card-description {
-    font-size: 14px;
+    font-size: 11px;
     color: #555;
-    margin-bottom: 12px;
-    line-height: 1.5;
-    text-align: center;
+    margin-bottom: 5px;
+    line-height: 1;
+    text-align: left;
+    flex-grow: 1; /* Allow the description to take available space */
+    overflow-y: auto; /* Enable scrolling if content overflows */
 }
 
 @media (max-width: 768px) {
@@ -189,15 +197,4 @@ body {
     justify-content: center;
     margin-top: 50px;
     margin-bottom: 15px;
-}
-
-.star {
-    font-size: 15px;
-    color: #d3d3d3; /* Gray color for unselected stars */
-    cursor: pointer;
-    margin: 1px;
-}
-
-.star.selected {
-    color: gold; /* Gold color for selected stars (yellow) */
 }
