@@ -68,7 +68,7 @@ body::before {
 .About h2 {
   font-family: 'Poppins', sans-serif;
   font-size: 1.5rem;
-  /* Adjust for smaller screens */
+  /* Default size for larger screens */
   margin: 1rem 0;
   color: #ffffff;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
@@ -78,12 +78,33 @@ body::before {
   font-family: 'Lora', serif;
   font-size: 1rem;
   line-height: 1.5;
-  /* Adjust spacing for smaller screens */
+  /* Default size for larger screens */
   text-align: justify;
   color: #ffffff;
   margin-bottom: 1rem;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .About {
+    padding: 1.5rem;
+    /* Slightly increase padding on mobile */
+  }
+
+  .About h2 {
+    font-size: 1.8rem;
+    /* Make heading larger on small screens */
+  }
+
+  .About p {
+    font-size: 1.1rem;
+    /* Slightly increase paragraph size */
+    line-height: 1.6;
+    /* Adjust line height for better readability */
+  }
+}
+
 
 /* Footer */
 footer {
