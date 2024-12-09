@@ -1,13 +1,16 @@
+/* General Reset */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
   background-color: #28282B;
   margin: 0;
-  height: 90vh;
+  min-height: 100vh;
+  /* Ensure content fits screen height */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,49 +32,39 @@ body::before {
   background-repeat: no-repeat;
   filter: blur(2px);
   z-index: -1;
-  /* Adds a dark overlay to make the background darker */
   background-color: rgba(0, 0, 0, 0.8);
-  /* Adjust the opacity as needed */
 }
 
-
-
+/* About Section */
 .About {
   text-align: center;
-  /* Centers the content */
   margin: 0 auto;
-  max-width: 800px;
-  /* Restricts content width for better readability */
+  max-width: 90%;
+  /* Reduce width on smaller screens */
+  padding: 1rem;
 }
 
 .About h2 {
   font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  /* Adjust for smaller screens */
+  margin: 1rem 0;
   color: #ffffff;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  /* Shadow effect */
 }
 
 .About p {
   font-family: 'Lora', serif;
   font-size: 1rem;
-  line-height: 1.8;
+  line-height: 1.5;
+  /* Adjust spacing for smaller screens */
   text-align: justify;
   color: #ffffff;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  /* Shadow effect */
 }
 
-
-/* Optional: Add spacing to the entire section */
-.About {
-  padding: 2rem 1rem;
-}
-
-/* Footer style */
+/* Footer */
 footer {
   padding: 1rem;
   background-color: #2c3e50;
@@ -81,39 +74,37 @@ footer {
   bottom: 0;
   width: 100%;
   display: flex;
+  flex-direction: column;
+  /* Stack content on smaller screens */
   justify-content: center;
-  /* Center the content horizontally */
   align-items: center;
-  /* Center content vertically */
+  text-align: center;
 }
 
+/* Heart Container */
 .heart-container {
   display: flex;
+  flex-direction: row;
+  /* Keep row alignment */
   align-items: center;
-  /* Align heart, count, and text in a row */
-  gap: 1rem;
-  /* Adds space between text, heart, and counter */
+  gap: 0.5rem;
+  /* Reduce spacing */
   cursor: pointer;
 }
 
 .love-text {
-  font-size: 1.5rem;
-  /* Increase font size */
+  font-size: 1rem;
+  /* Reduce font size */
   font-weight: bold;
-  /* Make text bold */
   color: #ffffff;
-  /* Keep text white */
   margin: 0;
-  text-align: left;
-  /* Align text to the left side */
   font-family: 'Dancing Script', cursive;
-  /* Cursive font for an elegant look */
   letter-spacing: 0.05em;
-  /* Add spacing for a more elegant look */
 }
 
 .heart {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  /* Adjust size */
   color: #ffffff;
   transition: color 0.3s, transform 0.3s;
 }
@@ -124,5 +115,44 @@ footer {
 }
 
 .click-count {
-  font-size: 1rem;
+  font-size: 0.9rem;
+  /* Adjust size */
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .About h2 {
+    font-size: 1.2rem;
+    /* Smaller title font */
+  }
+
+  .About p {
+    font-size: 0.9rem;
+    /* Smaller paragraph font */
+    line-height: 1.4;
+    /* Compact line spacing */
+  }
+
+  footer {
+    padding: 0.5rem;
+    /* Reduce padding */
+    font-size: 0.8rem;
+    /* Adjust text size */
+  }
+
+  .heart-container {
+    flex-direction: column;
+    /* Stack heart and text vertically */
+    gap: 0.3rem;
+  }
+
+  .love-text {
+    font-size: 0.9rem;
+    /* Smaller text */
+  }
+
+  .heart {
+    font-size: 1rem;
+    /* Smaller heart size */
+  }
 }
