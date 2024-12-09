@@ -1,0 +1,138 @@
+/* Global Styles */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #1a2b48;
+    /* Deep Blue */
+    background-color: #eef4f9;
+    /* Light Blue for Background */
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Carattere', cursive;
+    color: #105e8a;
+    /* Vibrant CN StartUps Blue */
+    margin: 20px 0;
+}
+
+/* Stories Container */
+.story-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Story Cards */
+.story-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.story-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #105e8a;
+    /* Vibrant Blue Divider */
+}
+
+.story-content {
+    padding: 16px;
+}
+
+.story-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #105e8a;
+    /* Vibrant CN StartUps Blue */
+    margin-bottom: 8px;
+}
+
+.story-description {
+    font-size: 0.95rem;
+    color: #555;
+    /* Neutral Gray for Text */
+    line-height: 1.5;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(16, 94, 138, 0.8);
+    /* Semi-transparent Blue */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+    font-size: 1.7rem;
+    color: #105e8a;
+    /* Vibrant CN StartUps Blue */
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    font-size: 1rem;
+    color: #444;
+    /* Slightly Darker Neutral Gray */
+    line-height: 1.6;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #777;
+    /* Subtle Close Button */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #105e8a;
+    /* Highlight Blue on Hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .story-card {
+        width: 90%;
+    }
+}

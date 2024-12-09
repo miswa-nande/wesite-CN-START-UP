@@ -217,7 +217,7 @@ nav {
 }
 
 
-/* Footer Styling */
+
 footer {
     background-color: #004d61;
     /* Matching nav bar color */
@@ -225,9 +225,7 @@ footer {
     text-align: center;
     padding: 1.5rem 1rem;
     width: 100%;
-    position: relative;
-    bottom: 0;
-    /* Ensures footer stays at the bottom even on short content pages */
+    /* The footer naturally stays at the bottom because of flexbox */
 }
 
 /* Footer content */
