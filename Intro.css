@@ -12,11 +12,10 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   color: rgb(0, 0, 0);
   position: relative;
-  overflow: hidden;
+  overflow: auto;
+  /* Allow body to scroll */
 }
 
 body::before {
@@ -38,23 +37,20 @@ body::before {
 /* About Section */
 .About {
   text-align: center;
-  margin: 0 auto;
+  margin: 1rem auto;
   max-width: 90%;
   padding: 1rem;
-  overflow-y: scroll;
+  overflow-y: auto;
+  /* Enable scrolling inside the About section */
   scrollbar-width: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  /* Avoid flexbox centering for better scroll behavior */
   max-height: 80vh;
+  /* Limit the height for better usability */
   position: relative;
-  top: -20px;
 }
 
-
-
-/* For Webkit browsers (Chrome, Safari) */
+/* For Webkit Scrollbar */
 .About::-webkit-scrollbar {
   width: 0;
 }
@@ -67,11 +63,11 @@ body::before {
   background: transparent;
 }
 
-/* About Section */
+/* About Content */
 .About h2 {
   font-family: 'Poppins', sans-serif;
   font-size: 2rem;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   color: #ffffff;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
@@ -86,10 +82,15 @@ body::before {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* Media Query for Mobile Devices */
+/* Media Queries */
 @media (max-width: 768px) {
+  .About {
+    padding: 0.5rem;
+    height: auto;
+  }
+
   .About h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .About p {
@@ -98,7 +99,6 @@ body::before {
   }
 }
 
-/* Media Query for larger screens */
 @media (min-width: 1200px) {
   .About h2 {
     font-size: 2.5rem;
@@ -108,14 +108,6 @@ body::before {
     font-size: 1.5rem;
   }
 }
-
-
-footer {
-  padding: 0.5rem;
-  font-size: 0.8rem;
-}
-
-
 
 /* Footer */
 footer {
@@ -131,42 +123,4 @@ footer {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-/* Heart Container */
-.heart-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-}
-
-.love-text {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #ffffff;
-  margin: 0;
-  font-family: 'Dancing Script', cursive;
-  letter-spacing: 0.05em;
-}
-
-.heart {
-  font-size: 1.2rem;
-  color: #ffffff;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.heart.glow {
-  color: #e74c3c;
-  transform: scale(1.2);
-}
-
-.click-count {
-  font-size: 0.9rem;
-}
-
-/* Smooth Scroll Behavior */
-html {
-  scroll-behavior: smooth;
 }
