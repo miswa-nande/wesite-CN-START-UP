@@ -1,26 +1,40 @@
-body, html {
+/* Global Styles */
+body,
+html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    <<<<<<< HEAD font-family: 'Arial', sans-serif;
+    =======font-family: 'Roboto', sans-serif;
 }
 
 body {
-    background-color: #1a2b48;
+    >>>>>>>0cafeea13c51f984d0271ceffdebe6aa8e0e5898 background-color: #1a2b48;
     color: white;
+    box-sizing: border-box;
 }
 
+/* General Button Styles */
+button {
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+/* Carousel Buttons */
 .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.5);
     color: white;
-    border: none;
     font-size: 24px;
     padding: 10px;
-    cursor: pointer;
-    z-index: 10;
     border-radius: 50%;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .left-btn {
@@ -31,53 +45,76 @@ body {
     right: 15px;
 }
 
-.carousel-btn:hover {
-    background: rgba(0, 0, 0, 0.8);
+/* Heart Button */
+.heart-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    font-size: 24px;
+    color: rgba(255, 0, 0, 0.5);
+    /* Semi-transparent red */
+    transition: transform 0.3s, color 0.3s;
 }
 
+.heart-btn:hover {
+    transform: scale(1.2);
+}
+
+.heart-btn.liked {
+    color: red;
+    /* Full red when liked */
+}
+
+/* Carousel */
 .image-carousel {
     display: flex;
     position: relative;
-    transition: transform 0.3s;
+    <<<<<<< HEAD width: 100%;
+    height: 200px;
+    =======transition: transform 0.3s;
     width: 150px;
-    height: 300px;
-    overflow: hidden;
+    height: 400px;
+    >>>>>>>0cafeea13c51f984d0271ceffdebe6aa8e0e5898 overflow: hidden;
+    transition: transform 0.3s ease-in-out;
 }
 
-.heart-btn {
-    position: absolute;
-    top: 10px; /* Distance from the top */
-    right: 10px; /* Distance from the right */
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: red;
-    cursor: pointer;
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
+<<<<<<< HEAD
 
-
-.card-container {
+/* Card Styles */
+=======>>>>>>>0cafeea13c51f984d0271ceffdebe6aa8e0e5898 .card-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
-    box-sizing: border-box;
 }
 
 .card {
-    width: calc((100% - 80px) / 5);
+    flex: 1;
+    max-width: 23%;
+    min-width: 200px;
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     position: relative;
+    <<<<<<< HEAD height: 400px;
+    color: #333;
     transition: transform 0.3s, box-shadow 0.3s;
-    height: 400px;
+    =======transition: transform 0.3s, box-shadow 0.3s;
+    height: 450px;
+    /* Increased card height */
+    >>>>>>>0cafeea13c51f984d0271ceffdebe6aa8e0e5898
 }
 
 .card:hover {
@@ -88,7 +125,9 @@ body {
 .card-image-container {
     position: relative;
     width: 100%;
-    height: 300px;
+    <<<<<<< HEAD height: 200px;
+    =======height: 300px;
+    /* Fixed height for the image carousel */
     overflow: hidden;
 }
 
@@ -97,107 +136,169 @@ body {
     height: 250px;
     object-fit: cover;
     object-position: center;
+    >>>>>>>0cafeea13c51f984d0271ceffdebe6aa8e0e5898
 }
 
 .card-content {
     padding: 16px;
     background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 200px;
+    /* Adjusted height for the content */
+    position: absolute;
+    /* Keep it in a fixed position at the bottom */
+    bottom: 0;
+    width: 100%;
 }
 
 .card-title {
-    font-size: 18px;
-    margin-bottom: 8px;
+    <<<<<<< HEAD font-size: 18px;
+    margin: 0 0 8px;
+    color: #1a2b48;
+    font-weight: bold;
+    =======font-size: 16px;
+    margin-bottom: 5px;
     color: #333;
-    text-align: center;
+    >>>>>>>0cafeea13c51f984d0271ceffdebe6aa8e0e5898 text-align: center;
+    font-weight: bold;
 }
 
-.card-description {
+<<<<<<< HEAD .card-description,
+.card-price {
     font-size: 14px;
     color: #555;
-    margin-bottom: 12px;
+    text-align: center;
     line-height: 1.5;
-    text-align: center;
-}
 
-@media (max-width: 768px) {
-    .card {
-        width: calc((100% - 40px) / 2);
+    =======.card-description {
+        font-size: 11px;
+        color: #555;
+        margin-bottom: 5px;
+        line-height: 1;
+        text-align: left;
+        flex-grow: 1;
+        /* Allow the description to take available space */
+        overflow-y: auto;
+        /* Enable scrolling if content overflows */
+        >>>>>>>0cafeea13c51f984d0271ceffdebe6aa8e0e5898
     }
-}
 
-@media (max-width: 480px) {
-    .card {
-        width: 100%;
+    .card-price {
+        margin-top: 8px;
+        font-weight: bold;
+        color: #1a2b48;
     }
-}
 
-.second-nav {
-    display: flex;
-    justify-content: center;
-    overflow-x: auto;
-    white-space: nowrap;
-    background-color: #f5f5f5;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    max-width: 40%;
-    margin: 20px auto;
-    border-radius: 12px;
-    font-size: x-large;
-    color: #000;
-    font-weight: bold;
-    font-family: 'Helvetica', sans-serif;
+    /* Swipe Navbar */
+    .swipe-navbar {
+        display: flex;
+        justify-content: center;
+        overflow-x: auto;
+        white-space: nowrap;
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        max-width: 90%;
+        margin: 20px auto;
+        border-radius: 12px;
+    }
 
-}
+    .swipe-navbar::-webkit-scrollbar {
+        display: none;
+    }
 
-.nav-item {
-    padding: 10px 20px;
-    margin: 0 8px;
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-size: 14px;
-    color: #333;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
-}
+    .nav-item {
+        padding: 10px 20px;
+        margin: 0 8px;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+        color: #333;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s, background-color 0.3s;
+    }
 
-.nav-item:hover {
-    background-color: #eee;
-    transform: scale(1.05);
-}
+    .nav-item:hover {
+        background-color: #eee;
+        transform: scale(1.05);
+    }
 
-.facebook-link {
-    font-size: 1.5em;
-    color: #3b5998;
-    display: inline-block;
-    margin-top: 10px;
-    text-decoration: none;
-}
+    .bookmark-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: white;
+        border: none;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        color: #333;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        <<<<<<< HEAD box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        z-index: 15;
+        transition: background 0.3s, transform 0.3s;
+    }
 
-.facebook-link i {
-    font-size: 20px;
-    transition: color 0.3s ease;
-}
+    .bookmark-btn:hover {
+        transform: scale(1.1);
+        background: #f5f5f5;
+    }
 
-.facebook-link:hover i {
-    color: #1d3557;
-}
 
-.rating {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
+    /* Footer */
+    footer {
+        background-color: #333;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        border-top: 1px solid #555;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-links a {
+        color: white;
+        font-size: 24px;
+        margin: 0 10px;
+        transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+        color: #f5a623;
+    }
+
+    .footer-content p {
+        margin: 10px 0 0;
+        font-size: 14px;
+    }
+
+    /* Media Queries */
+    @media (max-width: 1024px) {
+        .card {
+            max-width: 45%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .card {
+            max-width: 100%;
+        }
+    }
+
+    =======margin-top: 50px;
     margin-bottom: 15px;
 }
 
-.star {
-    font-size: 15px;
-    color: #d3d3d3; /* Gray color for unselected stars */
-    cursor: pointer;
-    margin: 1px;
-}
-
-.star.selected {
-    color: gold; /* Gold color for selected stars (yellow) */
-}
+>>>>>>>0cafeea13c51f984d0271ceffdebe6aa8e0e5898
